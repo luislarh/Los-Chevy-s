@@ -1,0 +1,14 @@
+
+.formulario{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.formulario form{
+    background-color: #e0d3d3;
+    box-shadow: 5px 5px 15px #ffff;
+    border-radius: 20px;
+    flex: 1;
+}

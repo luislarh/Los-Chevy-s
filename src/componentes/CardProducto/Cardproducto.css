@@ -1,0 +1,96 @@
+
+
+.cardP-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardP{
+  width: 100%;
+  max-width: 300px;
+  background-color: #ffffe3;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardP:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cardP-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.cardP-content {
+  padding: 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.price {
+  display: block;
+  font-size: 20px;
+  color: #e44d26;
+  margin-top: 10px;
+}
+
+
+.ver-mas-button {
+  background-color: #e6b95c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+}
+
+.ver-mas-button:hover {
+  background-color: #dea244;
+}
+
+/* Estilos adicionales para dispositivos más pequeños */
+@media screen and (max-width: 768px) {
+  .cards {
+    flex-direction: column; /* Cambia a apilamiento vertical en dispositivos más pequeños */
+  }
+}

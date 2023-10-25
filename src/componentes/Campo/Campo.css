@@ -1,0 +1,13 @@
+/* .campo{
+    background-color: #d8d6d6;
+    box-shadow: 5px 5px 15px #ffff;
+    border-radius: 20px;
+    flex: 1;
+} */
+
+.campo label{
+    font-size: 18px;
+    display: block;
+    font-weight: 700;
+
+}
