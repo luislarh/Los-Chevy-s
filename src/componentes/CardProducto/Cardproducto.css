@@ -35,9 +35,10 @@ h1 {
   flex-direction: column;
 }
 
-.cardP:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+.cardP-image:hover {
+  transform: scale(1.1); /* Aumenta el factor de escala para un efecto más suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduce la intensidad de la sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Agrega transiciones para hacer el cambio más suave */
 }
 
 .cardP-image img {

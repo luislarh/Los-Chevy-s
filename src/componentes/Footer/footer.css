@@ -1,0 +1,58 @@
+.custom-footer {
+    background-color: #646060;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center; /* Centra todo el contenido en el pie de página */
+  }
+  
+  .custom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center; /* Centra el contenido en pantallas más grandes */
+    flex-wrap: wrap;
+  }
+  
+  .contacto-info,
+  .redes-sociales,
+  .derechos-reservados {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .contacto-info h3,
+  .redes-sociales h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Color blanco para los encabezados h3 */
+  }
+  
+  .contacto-info a,
+  .redes-sociales a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px; /* Más espacio entre enlaces */
+    transition: color 0.3s;
+  }
+  
+  .contacto-info a:hover,
+  .redes-sociales a:hover {
+    color: #ffcc00;
+  }
+  
+  .derechos-reservados {
+    font-size: 15px;
+    margin-top: 20px; /* Más espacio arriba del texto */
+  }
+  
+  @media (max-width: 768px) {
+    .redes-sociales,
+    .derechos-reservados {
+      display: none; /* Oculta la parte de redes sociales y derechos reservados en pantallas más pequeñas */
+    }
+  }
+  

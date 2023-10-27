@@ -1,0 +1,99 @@
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f49d81;
+    border-radius: 10px;
+  }
+
+
+  p {
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+  }
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .form-label {
+    font-weight: bold;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .butt {
+    background-color: #e6b95c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+/* Estilos para la sección de ubicación */
+.location-section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .location-title {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .location-map {
+    margin: 20px 0;
+  }
+  
+  .contact-info {
+    text-align: left;
+    margin: 20px 0;
+  }
+  
+  .contact-item {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+    text-decoration: none;
+  }
+  
+  .whatsapp-button {
+    background-color: #25d366;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #128c7e;
+  }
+
+  .aa{
+    text-decoration: none;
+  }
