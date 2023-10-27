@@ -16,6 +16,7 @@ import Somos from "./Pages/Somos";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Contacto from "./componentes/Contacto/Contacto";
+import Index from "./componentes/index";
 
 
 
@@ -48,6 +49,8 @@ function App() {
       <Route path="/Somos" element={<Somos></Somos>}></Route>
       <Route path="/Productos" element={<CardProducto></CardProducto>}></Route>
       <Route path="/Contacto" element={<Contacto></Contacto>}></Route>
+      <Route path="/" element={<Index></Index>}></Route>
+
     </Routes>
       <Footer></Footer>
     </Router>

@@ -3,16 +3,16 @@ import './Carrusel.css';
 function Carrusel (){
     return(
     <div  className="carrusel ">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="/img/banner.svg" class="d-block w-100" alt="..." />
+        <div id="carouselExampleFade" className="carousel slide carousel-fade">
+        <div className="carousel-inner" style={{ maxHeight: '450px' }}>
+            <div className="carousel-item active" style={{ maxHeight: '450px' }}>
+                <img src="/img/banner1.png" className="d-block w-100 img-fluid" alt="Banner 1" style={{ maxHeight: '400px' }} />
             </div>
-            <div class="carousel-item">
-            <img src="/img/banner2.png" class="d-block w-100" alt="..."/>
+            <div className="carousel-item" style={{ maxHeight: '450px' }}>
+                <img src="/img/banner2.png" className="d-block w-100 img-fluid" alt="Banner 2" style={{ maxHeight: '400px' }} />
             </div>
-            <div class="carousel-item">
-            <img src="/img/banner3.png" class="d-block w-100" alt="..."/>
+            <div className="carousel-item" style={{ maxHeight: '450px' }}>
+                <img src="/img/banner3.png" className="d-block w-100 img-fluid" alt="Banner 3" style={{ maxHeight: '400px' }} />
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
