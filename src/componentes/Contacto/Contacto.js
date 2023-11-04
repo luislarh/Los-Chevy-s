@@ -66,7 +66,7 @@ function Contacto() {
         <div className="col-lg-4 location-section">
             <h2 className="location-title">Nuestra Ubicación</h2>
             <div className="location-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d937.1338603622022!2d-100.72034073042583!3d20.028003198836412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cd747943dc317%3A0xe2daa5ded8fce818!2sTortiller%C3%ADa%20y%20tostadas%20La%20Guadalupana!5e0!3m2!1ses!2smx!4v1698360285045!5m2!1ses!2smx" width="100%" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d937.1338603622022!2d-100.72034073042583!3d20.028003198836412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cd747943dc317%3A0xe2daa5ded8fce818!2sTortiller%C3%ADa%20y%20tostadas%20La%20Guadalupana!5e0!3m2!1ses!2smx!4v1698360285045!5m2!1ses!2smx" width="100%" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"/>
             </div>
             <div className="contact-info">
                 <p className='contact-item'>Correo: <a className='aa' href="mailto:laguadalupana35@gmail.com">laguadalupana35@gmail.com</a></p>

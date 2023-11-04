@@ -4,15 +4,15 @@ function Carrusel (){
     return(
     <div  className="carrusel ">
         <div id="carouselExampleFade" className="carousel slide carousel-fade">
-        <div className="carousel-inner" style={{ maxHeight: '450px' }}>
-            <div className="carousel-item active" style={{ maxHeight: '450px' }}>
-                <img src="/img/banner1.png" className="d-block w-100 img-fluid" alt="Banner 1" style={{ maxHeight: '400px' }} />
+        <div className="carousel-inner" style={{ maxHeight: '650px' }}>
+            <div className="carousel-item active" style={{ maxHeight: '650px' }}>
+                <img src="/img/banner1.png" className="d-block w-100 img-fluid" alt="Banner 1" style={{ maxHeight: '480px' }} />
             </div>
-            <div className="carousel-item" style={{ maxHeight: '450px' }}>
-                <img src="/img/banner2.png" className="d-block w-100 img-fluid" alt="Banner 2" style={{ maxHeight: '400px' }} />
+            <div className="carousel-item" style={{ maxHeight: '650px' }}>
+                <img src="/img/banner2.png" className="d-block w-100 img-fluid" alt="Banner 2" style={{ maxHeight: '480px' }} />
             </div>
-            <div className="carousel-item" style={{ maxHeight: '450px' }}>
-                <img src="/img/banner3.png" className="d-block w-100 img-fluid" alt="Banner 3" style={{ maxHeight: '400px' }} />
+            <div className="carousel-item" style={{ maxHeight: '650px' }}>
+                <img src="/img/banner3.png" className="d-block w-100 img-fluid" alt="Banner 3" style={{ maxHeight: '480px' }} />
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

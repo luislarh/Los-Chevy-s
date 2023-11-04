@@ -1,0 +1,11 @@
+/* SplashScreen.css */
+.splash-screen {
+    background-color: #f49d81; /* Color de fondo amarillo, puedes cambiarlo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.splash-screen img {
+    width: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
+}
