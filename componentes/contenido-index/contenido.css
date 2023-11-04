@@ -1,0 +1,33 @@
+.contenido{
+    background-color: #FACEB2;
+    
+}
+.cartas{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Banner{
+    margin-top: 30px;
+    
+}
+
+.Banner img{
+    width: 100%;
+
+}
+
+.Titulo_tarjets{
+    font-size: 40px; 
+    color: white;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:730px) {
+
+    .cartas{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
