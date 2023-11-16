@@ -1,0 +1,118 @@
+.carrito-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.carrito-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.carrito-item {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.carrito-imagen {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.carrito-detalle {
+  flex: 1;
+}
+
+.carrito-botones {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-botones button {
+  margin-right: 10px;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.carrito-botones-borrar {
+  background-color: #ff0000;
+}
+.carrito-botones-agregar {
+  background-color: #007bff;
+}
+
+.carrito-total {
+  margin-top: 20px;
+  text-align: right;
+  font-weight: bold;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  margin: 0;
+  color: #333;
+}
+/* Estilos adicionales para los nuevos botones */
+.carrito-total {
+  margin-top: 20px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.carrito-total button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carrito-total button:first-child {
+  background-color: #ff0000; /* Estilo para el botón "Vaciar Carrito" */
+}
+
+.carrito-total button:last-child {
+  background-color: #e6b95c;
+  color: #ffffff; /* Estilo para el botón "Comprar" */
+}
+.carrito-total button:hover {
+  background-color: #333; /* Cambia el color al pasar el ratón sobre el botón */
+  color: #fff;
+}
+
+/* Estilos adicionales para dispositivos más pequeños */
+@media screen and (max-width: 768px) {
+  /* Estilos adicionales para dispositivos más pequeños */
+  @media screen and (max-width: 768px) {
+    .carrito-item {
+      flex-direction: column; /* Cambia a apilamiento vertical en dispositivos más pequeños */
+    }
+
+    .carrito-imagen {
+      margin-right: 0; /* Elimina el margen derecho en pantallas más pequeñas */
+      margin-bottom: 10px; /* Añade un margen inferior para separar la imagen en pantallas más pequeñas */
+    }
+
+    .carrito-botones {
+      flex-direction: row; /* Mantén los botones en línea en pantallas más pequeñas */
+      align-items: center; /* Alinea los botones al centro en pantallas más pequeñas */
+      justify-content: space-between; /* Agrega espacio entre los botones en pantallas más pequeñas */
+    }
+
+    .carrito-botones button {
+      margin-right: 5px; /* Agrega un pequeño margen entre los botones en pantallas más pequeñas */
+      margin-bottom: 0; /* Elimina el margen inferior en pantallas más pequeñas */
+    }
+  }
+}

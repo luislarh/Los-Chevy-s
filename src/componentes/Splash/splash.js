@@ -1,6 +1,6 @@
 import React from 'react';
 import './splash.css';
-import splashImage from './Laguadaluana.png'; 
+import splashImage from './Laguadalupana.png'; 
 
 function SplashScreen() {
     return (

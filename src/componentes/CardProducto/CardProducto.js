@@ -1,26 +1,36 @@
-import "./Cardproducto.css";
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+// CardProducto.js
 
-// Constante para la API
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { useCarrito } from '../Carrito/CarritoContext';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import './Cardproducto.css';
+
 const endpoint = 'http://localhost:8000/api';
 
+export const CardProducto = () => {
+  const navigate = useNavigate();
+  const { agregarAlCarrito, cantidadEnCarrito } = useCarrito();
 
-const CardProducto= () => {
-    const [productos, setProductos] = useState([]);
-  
-    useEffect(() => {
-      getAllProductos();
-    }, []);
-  
-    const getAllProductos = async () => {
-      const response = await axios.get(`${endpoint}/productos`);
-      setProductos(response.data);
-    };
+  const [productos, setProductos] = useState([]);
 
-    return (
-      <div className="cardP-container">
+  useEffect(() => {
+    getAllProductos();
+  }, []);
+
+  const getAllProductos = async () => {
+    const response = await axios.get(`${endpoint}/productos`);
+    setProductos(response.data);
+  };
+
+  return (
+    <div className="cardP-container">
       <h1>Catálogo de Productos</h1>
+      <h3 style={cantidadEnCarrito > 0 ? { color: '#E9967A' } : { color: '#333' }}>
+        ({cantidadEnCarrito} en el carrito)
+      </h3>
       <div className="cards">
         {productos.map((producto) => (
           <div className="cardP" key={producto.id}>
@@ -28,16 +38,41 @@ const CardProducto= () => {
               <img src={producto.urlfoto} alt={producto.nombre} />
             </div>
             <div className="cardP-content">
-              <h3>{producto.nombre}</h3>
+              <Link to={`/producto/${producto.id}`}>
+                <h3 className='nombreh3'>{producto.nombre}</h3>
+              </Link>
               <p className="pcolor">{producto.resumen}</p>
               <span className="price">${producto.precio}</span>
-              <button className="ver-mas-button">Ver Más</button>
+              <Link
+                to={`/producto/${producto.id}#detalles-producto`}
+                className="ver-mas-button"
+                onClick={() => {
+                  navigate(`/producto/${producto.id}#detalles-producto`);
+                }}
+              >
+                <i className="fas fa-eye"></i> Ver
+              </Link>
+              <button className="agregar-button" onClick={() => {
+                agregarAlCarrito(producto);
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'Agregado al carrito',
+                  showConfirmButton: false,
+                  timer: 1000,
+                  customClass: {
+                    popup: 'tamaño-personalizado',
+                  },
+                });
+              }}>
+                <i className="fas fa-cart-plus"></i> Agregar
+              </button>
             </div>
           </div>
         ))}
       </div>
     </div>
-    );
-  }
+  );
+};
 
 export default CardProducto;

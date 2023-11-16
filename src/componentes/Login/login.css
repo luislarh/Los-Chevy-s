@@ -1,0 +1,31 @@
+.button-login {
+  background-color: #f49d81;
+  color: #fff;
+  padding: 6px 10px; /* Ajusta el relleno según sea necesario */
+  font-size: 12; /* Ajusta el tamaño del texto según sea necesario */
+  cursor: pointer;
+  border: none;
+  border-radius: 10px; /* Ajusta el valor según sea necesario */
+}
+.button-login:hover {
+  background-color: #f58f6d;
+}
+
+.button-logout {
+  background-color: #f49d81;
+  color: #fff;
+  padding: 6px 10px; /* Ajusta el relleno según sea necesario */
+  font-size: 12; /* Ajusta el tamaño del texto según sea necesario */
+  cursor: pointer;
+  border: none;
+  border-radius: 10px; /* Ajusta el valor según sea necesario */
+}
+
+.button-logout:hover {
+  background-color: #f58f6d;
+}
+.userP {
+  padding: 6px 10px;
+  color: #ffffff;
+  font-size: 16px;
+}

@@ -3,34 +3,25 @@ import React from 'react';
 import './footer.css';
 
 const Footer = () => {
-    return (
-        
-        <footer className="custom-footer">
-        <div className="custom-container">
-          <div className="footer-content">
-            <div className="contacto-info">
-              <h3>Contacto</h3>
-              <p>Correo: <a href="mailto:Laguadalupana35@gmail.com">Laguadalupana35@gmail.com</a></p>
-              <p>Teléfono: <a href="tel:+524171235555">+52 417 123 5555</a></p>
-              <p>Dirección: Calle Francisco I Madero Esq. Leandro Valle, #1035, 38600</p>
-            </div>
-            <div className="redes-sociales">
-              <h3>Redes Sociales</h3>
-              <a href="https://www.facebook.com/Tortilleria" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook-f"></i>Facebook
-              </a>
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>Instagram
-              </a>
-            </div>
-            <div className="derechos-reservados">
-              <p >Desarrollado por Los Chevy's 2023</p>
-            </div>
-          </div>
+  return (
+    <div className="footertodo">
+      <div className='footercuerpo'>
+        <img src="/Laguadalupana.png" alt="" className="logo" />
+        <div className="social-icons-container">
+          <a href="https://www.facebook.com/tostadaslaguadalupana" className="social-icon"></a>
+          <a href="" className="social-icon"></a>
         </div>
-      </footer>
-    );
-}      
-  
-  export default Footer;
-  
+        <ul className="footer-menu-container">
+          <li className="menu-item">Francisco I Madero #1135</li>
+          <li className="menu-item">Esquina Aquiles Serdán</li>
+          <li className="menu-item">Tel. 4171728387</li>
+
+        </ul>
+        <span className="copyright">2023. Los Chevys. Todos los derechos reservados.</span>
+
+      </div>
+    </div>
+  );
+}
+
+export default Footer;

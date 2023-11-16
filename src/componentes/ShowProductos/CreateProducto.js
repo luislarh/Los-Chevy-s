@@ -55,7 +55,7 @@ export const CreateProducto = () => {
                     </div>
                     <div className="mb-3">
                     <label className="form-label">Descripción</label>
-                    <input
+                    <textarea
                         value={descripcion}
                         onChange={(e) => setDescripcion(e.target.value)}
                         type="text"

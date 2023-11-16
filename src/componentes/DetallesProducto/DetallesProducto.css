@@ -1,0 +1,84 @@
+/* DetallesProducto.css */
+
+.detalles-producto-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.detalles-producto-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.detalles-producto-imagen {
+  width: 100%; /* Ajusta el ancho al 100% de la tarjeta */
+  height: 300px; /* Establece la altura deseada */
+  object-fit: cover; /* Asegura que la imagen cubra el área especificada sin distorsión */
+  transition: transform 0.3s ease-in-out;
+}
+
+.detalles-producto-imagen:hover {
+  transform: scale(1.2);
+}
+
+.detalles-producto-info {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.detalles-producto-info h2 {
+  color: #333;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.descrip {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.precio {
+  color: #e44d26;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.detalles-producto-info button {
+  background-color: #e6b95c;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.detalles-producto-info button:hover {
+  background-color: #000000;
+}
+
+@media (max-width: 768px) {
+  .detalles-producto-container {
+    flex-direction: column;
+  }
+
+  .detalles-producto-imagen {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .detalles-producto-info {
+    margin-left: 0; /* Asegúrate de que no haya un margen izquierdo en pantallas más pequeñas */
+  }
+}

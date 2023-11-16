@@ -9,3 +9,24 @@
 .splash-screen img {
     width: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
 }
+
+/* Estilos adicionales para hacerlo más responsivo en pantallas pequeñas */
+@media (max-width: 768px) {
+    .splash-screen {
+      font-size: 18px; /* Cambia el tamaño de la fuente para pantallas más pequeñas */
+    }
+  
+    .splash-screen img {
+      width: 150px; /* Ajusta el tamaño de la imagen para pantallas más pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .splash-screen {
+      font-size: 16px; /* Cambia el tamaño de la fuente para pantallas aún más pequeñas */
+    }
+  
+    .splash-screen img {
+      width: 120px; /* Ajusta el tamaño de la imagen para pantallas muy pequeñas */
+    }
+  }
