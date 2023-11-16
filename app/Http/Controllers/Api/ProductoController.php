@@ -48,6 +48,7 @@ class ProductoController extends Controller
     public function show($id)
     {
         $producto = Producto::find($id);
+        $producto->urlfoto = asset('img/productos/' . $producto->urlfoto);
         return $producto;
     }
 
