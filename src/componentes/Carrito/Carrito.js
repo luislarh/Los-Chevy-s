@@ -1,51 +1,93 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import { useCarrito } from './CarritoContext';
+import { useState, useEffect } from 'react';
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
+import axios from 'axios';
 
 import './Carrito.css';
 
 const Carrito = () => {
-  const { productosEnCarrito, agregarAlCarrito, quitarDelCarrito, vaciarCarrito, comprar, cantidadEnCarrito } = useCarrito();
+  const {
+    productosEnCarrito,
+    agregarAlCarrito,
+    quitarDelCarrito,
+    vaciarCarrito,
+    cantidadEnCarrito,
+  } = useCarrito();
 
+  // Estado local del carrito (obtenido de localStorage)
+  const [productosEnCarritoLocalStorage, setProductosEnCarritoLocalStorage] = useState(() => {
+    const productosEnCarritoString = localStorage.getItem('productosEnCarrito');
+    return productosEnCarritoString ? JSON.parse(productosEnCarritoString) : [];
+  });
+
+  useEffect(() => {
+    // Actualizar el estado del carrito con el estado almacenado en localStorage
+    setProductosEnCarritoLocalStorage(productosEnCarrito);
+  }, [productosEnCarrito]);
+
+  // Estado para mercado pago
+  const [preferenceId, setPreferenceId] = useState(null);
+  initMercadoPago('TEST-0180d2e6-902e-4f5b-9905-4813dc86a62c');
+
+  // Funcion para pagar con mercado pago
+  const createPreference = async () => {
+    try {
+      const response = await axios.post('http://localhost:8080/create_preference', {
+        productosEnCarrito,
+        quantity: 1,
+        currency_id: 'MXN',
+      });
+
+      const { id } = response.data;
+      return id;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleBuy = async () => {
+    const id = await createPreference();
+    if (id) {
+      setPreferenceId(id);
+    }
+  };
 
   const quitarProducto = (id) => {
-    // Utiliza la función proporcionada por el contexto para quitar productos del carrito
     quitarDelCarrito(id);
-    console.log("Productos en el carrito después de quitar:", productosEnCarrito);
 
     Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Producto quitado del carrito",
+      position: 'top-end',
+      icon: 'success',
+      title: 'Producto quitado del carrito',
       showConfirmButton: false,
-      timer: 1000
+      timer: 1000,
     });
   };
+
   const vaciarCarritoAlerta = () => {
     vaciarCarrito();
 
     Swal.fire({
-      position: "top-end",
-      icon: "info",
-      title: "Carrito vaciado",
+      position: 'top-end',
+      icon: 'info',
+      title: 'Carrito vaciado',
       showConfirmButton: false,
-      timer: 1000
+      timer: 1000,
     });
   };
-
-  console.log("Productos en el carrito en el render:", productosEnCarrito);
-
 
   return (
     <div className="carrito-container">
       <h2>Carrito de Compras</h2>
 
-      {productosEnCarrito.length === 0 ? (
+      {productosEnCarritoLocalStorage.length === 0 ? (
         <p>El carrito está vacío</p>
       ) : (
         <div>
           <ul className="carrito-lista">
-            {productosEnCarrito.map((producto) => (
+            {productosEnCarritoLocalStorage.map((producto) => (
               <li key={producto.id} className="carrito-item">
                 <img src={producto.urlfoto} alt={producto.nombre} className="carrito-imagen" />
                 <div className="carrito-detalle">
@@ -54,22 +96,25 @@ const Carrito = () => {
                   <p>Cantidad: {producto.cantidad}</p>
                 </div>
                 <div className="carrito-botones">
-                  <button className='carrito-botones-borrar' onClick={() => quitarProducto(producto.id)}>
+                  <button className="carrito-botones-borrar" onClick={() => quitarProducto(producto.id)}>
                     <i className="fas fa-minus"></i>
                   </button>
-                  <button className="carrito-botones-agregar" onClick={() => {
-                    agregarAlCarrito(producto);
-                    Swal.fire({
-                      position: 'top-end',
-                      icon: 'success',
-                      title: 'Agregado al carrito',
-                      showConfirmButton: false,
-                      timer: 1000,
-                      customClass: {
-                        popup: 'tamaño-personalizado',
-                      },
-                    });
-                  }}>
+                  <button
+                    className="carrito-botones-agregar"
+                    onClick={() => {
+                      agregarAlCarrito(producto);
+                      Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Agregado al carrito',
+                        showConfirmButton: false,
+                        timer: 1000,
+                        customClass: {
+                          popup: 'tamaño-personalizado',
+                        },
+                      });
+                    }}
+                  >
                     <i className="fas fa-plus"></i>
                   </button>
                 </div>
@@ -79,7 +124,8 @@ const Carrito = () => {
           <div className="carrito-total">
             <p>Total: ${calcularTotal(productosEnCarrito)}</p>
             <button onClick={vaciarCarritoAlerta}>Vaciar Carrito</button>
-            <button onClick={comprar}>Comprar</button>
+            <button onClick={handleBuy}>Comprar</button>
+            {preferenceId && <Wallet initialization={{ preferenceId }} />}
           </div>
         </div>
       )}

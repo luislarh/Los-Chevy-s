@@ -1,11 +1,14 @@
 import "./contenido.css";
 
+import Badge from 'react-bootstrap/Badge';
 import ProductGallery from './ProductGallery';
 
 const Index = () => {
   return (
     <section className="contenido">
-      <h2 className="Titulo_tarjets">Prueba nuestros productos</h2>
+      <h1 className="Titulo_tarjets">
+        <Badge bg="dark">Nuestros Productos</Badge>
+      </h1>
       <ProductGallery />
     </section>
   );

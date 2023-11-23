@@ -1,0 +1,49 @@
+/* CarritoBoton.css */
+.carrito-boton-container {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 1000;
+}
+
+.carrito-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f49d81;
+  color: #fff;
+  border: 1px solid #ffffff;
+  padding: 2vw; /* Ajusta el padding */
+  border-radius: 50%;
+  font-size: 3vw; /* Ajusta el tamaño de la fuente */
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-radius 0.3s ease,
+    border 0.3s ease;
+}
+
+/* Media queries para ajustar estilos en pantallas más grandes */
+@media (min-width: 768px) {
+  .carrito-boton {
+    padding: 15px;
+    font-size: 12px; /* Ajusta el tamaño de la fuente */
+  }
+}
+
+@media (min-width: 1200px) {
+  .carrito-boton {
+    padding: 15px;
+    font-size: 15px; /* Ajusta el tamaño de la fuente */
+  }
+}
+
+.carrito-boton:hover {
+  background-color: #000;
+  border-radius: 25px;
+}
+
+.carrito-cantidad {
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}

@@ -20,6 +20,7 @@ import Contacto from "./componentes/Contacto/Contacto";
 import Index from "./componentes/index";
 import SplashScreen from "./componentes/Splash/splash";
 import Carrito from "./componentes/Carrito/Carrito";
+import CarritoBoton from "./componentes/Carrito/CarritoBoton";
 
 // CRUDS
 import ShowProductos from "./componentes/ShowProductos/ShowProductos";
@@ -88,6 +89,7 @@ function App() {
         <Route path="/CreateProductos" element={<CreateProducto></CreateProducto>}></Route>
         <Route path="/EditProductos/:id" element={<EditProducto></EditProducto>}></Route>
       </Routes>
+      <CarritoBoton />
       <Footer></Footer>
     </Router>
   );
