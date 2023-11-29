@@ -20,7 +20,7 @@
     "emailjs-com": "^3.2.0",
     "i18next": "^23.7.7",
     "mercadopago": "^2.0.4",
-    "react": "^18.2.0",
+    "react": "^18.0.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.5.0",
@@ -33,7 +33,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b luis",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -57,6 +57,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.0"
+    "gh-pages": "^6.0.0"
   }
 }
