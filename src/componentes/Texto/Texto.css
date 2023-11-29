@@ -1,6 +1,38 @@
-.text-justify{
-  text-align: justify;
-  /* Agrega otros estilos según tus preferencias */
-  padding:  5px 20px ;
-  font-family: 'Nunito';
+/* Estilos base para los botones */
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px; /* Separación del borde izquierdo */
+}
+
+.btnEspanol,
+.btnIngles {
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none; /* Sin borde */
+  border-radius: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones para color de fondo y texto */
+}
+
+/* Estilos para el botón de español */
+.btnEspanol {
+  background-color: #000000; /* Color verde */
+  color: white;
+}
+
+.btnEspanol:hover {
+  background-color: #cecbcb;
+  color: rgb(0, 0, 0); /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos para el botón de inglés */
+.btnIngles {
+  background-color: #000000; /* Color azul */
+  color: white;
+}
+
+.btnIngles:hover {
+  background-color: #cecbcb;
+  color: rgb(0, 0, 0); /* Cambio de color al pasar el mouse */
 }

@@ -3,13 +3,18 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useCarrito } from '../Carrito/CarritoContext';
 import Swal from 'sweetalert2';
-import CardProducto from '../CardProducto/CardProducto';
+import { Link } from "react-router-dom";
+
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 import './DetallesProducto.css';
 
 const endpoint = 'http://localhost:8000/api';
 
 const DetallesProducto = () => {
+    const { i18n } = useTranslation("global");
+
     const { id } = useParams();
     const { agregarAlCarrito } = useCarrito(); // Accessing agregarAlCarrito from CarritoContext
     const [producto, setProducto] = useState(null);
@@ -31,7 +36,7 @@ const DetallesProducto = () => {
     };
 
     if (!producto) {
-        return <p>Producto no encontrado</p>;
+        return <p>{i18next.t('pProductoNo')}</p>;
     }
 
     return (
@@ -43,7 +48,7 @@ const DetallesProducto = () => {
                 <div className="detalles-producto-info">
                     <h2>{producto.nombre}</h2>
                     <p className='descrip'>{producto.descripcion}</p>
-                    <p className='precio'>Precio: ${producto.precio}</p>
+                    <p className='precio'>{i18next.t('pPrecio')}: ${producto.precio}</p>
                     <button onClick={() => {
                         agregarAlCarrito(producto);
                         Swal.fire({
@@ -57,12 +62,14 @@ const DetallesProducto = () => {
                             },
                         });
                     }}>
-                        Agregar al carrito
+                        {i18next.t('buttoAgregar2')}
                     </button>
+                    <Link className="enlace-personalizado" as={Link} to="/Productos">
+                        Ver más
+                    </Link>
                 </div>
             </div>
             <br></br>
-            <CardProducto></CardProducto>
         </div>
     );
 };

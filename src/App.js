@@ -22,6 +22,8 @@ import SplashScreen from "./componentes/Splash/splash";
 import Carrito from "./componentes/Carrito/Carrito";
 import CarritoBoton from "./componentes/Carrito/CarritoBoton";
 
+
+
 // CRUDS
 import ShowProductos from "./componentes/ShowProductos/ShowProductos";
 import { CreateProducto } from "./componentes/ShowProductos/CreateProducto";
@@ -31,12 +33,13 @@ import DetallesProducto from "./componentes/DetallesProducto/DetallesProducto";
 
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
-  const { isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
   const [productos, setProductos] = useState([]);
 
 
@@ -81,6 +84,7 @@ function App() {
         <Route path="/Contacto" element={<Contacto></Contacto>}></Route>
         <Route path="/Carrito" element={<Carrito></Carrito>}></Route>
         <Route path="/" element={<Index></Index>}></Route>
+
 
 
 

@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
 import './ProductGallery.css'; // Asegúrate de importar tu archivo CSS
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 const ProductGallery = () => {
+  const { i18n } = useTranslation("global");
   const products = [
     {
       id: 1,
       name: 'Totopos',
       image: '/img/galeria/platoto.jpg',
-      description: 'Los totopos de La Tostadería La Guadalupana en Acámbaro son irresistibles. Elaborados con maíz de calidad y recetas tradicionales, estos crujientes triángulos son ideales para sumergir en salsas o disfrutar solos. Descubre la auténtica esencia de Acámbaro en cada bocado de nuestros deliciosos totopos.',
+      description: i18next.t('descripcionTotopos'),
     },
     {
       id: 2,
       name: 'Tortillas',
       image: '/img/galeria/torti.jpg',
-      description: 'Nuestras tortillas son el complemento perfecto para tus comidas. Hechas con maíz de la más alta calidad y siguiendo recetas tradicionales, nuestras tortillas frescas realzan el sabor de tus platillos favoritos. En La Tostadería La Guadalupana, te ofrecemos tortillas de primera que te transportarán al corazón de Acámbaro en cada mordisco.',
+      description: i18next.t('descripcionTortillas'),
     },
     {
       id: 3,
       name: 'Tostadas',
       image: '/img/galeria/tostada22.jpg',
-      description: ' Las tostadas de La Guadalupana son un verdadero placer para los amantes de la comida mexicana. Preparadas con esmero, nuestras tostadas son crujientes y resistentes, ideales para cargar con tus ingredientes favoritos. Su frescura y sabor auténtico te harán apreciar la diferencia en cada bocado.',
+      description: i18next.t('descripcionTostadas'),
     },
     {
       id: 4,
       name: 'Tacos',
       image: '/img/galeria/tacosmolde.jpg',
-      description: 'Nuestros tacos de molde son un símbolo de Acámbaro. Están hechos con nuestras tortillas de maíz recién hechas y rellenos de ingredientes frescos y deliciosos. Ya sea con carnitas, chicharrón prensado, guisados tradicionales o opciones vegetarianas, nuestros tacos de molde reflejan el auténtico sabor de la región de Acámbaro en cada bocado.',
+      description: i18next.t('descripcionTacos'),
     },
     // Agrega más productos según sea necesario
   ];
@@ -42,6 +45,10 @@ const ProductGallery = () => {
 
   return (
     <div className="product-gallery" >
+      {/* <div className='buttonContainer'>
+        <button className="btnEspanol" onClick={() => i18n.changeLanguage("es")}>ES</button>
+        <button className="btnIngles" onClick={() => i18n.changeLanguage("en")}>EN</button>
+      </div> */}
       <div className="product-grid">
         {products.map((product) => (
           <div key={product.id} className="product-card" onClick={() => openProductDetail(product)}>
@@ -56,7 +63,7 @@ const ProductGallery = () => {
             <img src={selectedProduct.image} alt={selectedProduct.name} />
             <h3>{selectedProduct.name}</h3>
             <p>{selectedProduct.description}</p>
-            <button onClick={closeProductDetail}>Cerrar</button>
+            <button onClick={closeProductDetail}>X</button>
           </div>
         </div>
       )}

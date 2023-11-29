@@ -42,10 +42,10 @@
   cursor: pointer;
 }
 .carrito-botones-borrar {
-  background-color: #ff0000;
+  background-color: #000000;
 }
 .carrito-botones-agregar {
-  background-color: #007bff;
+  background-color: #000000;
 }
 
 .carrito-total {

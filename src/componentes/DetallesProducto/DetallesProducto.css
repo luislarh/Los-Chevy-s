@@ -66,6 +66,19 @@
 .detalles-producto-info button:hover {
   background-color: #000000;
 }
+.enlace-personalizado {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 20px; /* Ajusta el tamaño de la fuente según tus preferencias */
+}
+
+/* Cambia el color al pasar el ratón por encima del enlace */
+.enlace-personalizado:hover {
+  color: #e6b95c; /* Puedes ajustar el color al pasar el mouse según tus preferencias */
+}
 
 @media (max-width: 768px) {
   .detalles-producto-container {

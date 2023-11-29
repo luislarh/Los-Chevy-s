@@ -3,7 +3,11 @@ import Swal from 'sweetalert2';
 import { useCarrito } from './CarritoContext';
 import { useState, useEffect } from 'react';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 import axios from 'axios';
+
+
 
 import './Carrito.css';
 
@@ -15,6 +19,7 @@ const Carrito = () => {
     vaciarCarrito,
     cantidadEnCarrito,
   } = useCarrito();
+  const { i18n } = useTranslation("global");
 
   // Estado local del carrito (obtenido de localStorage)
   const [productosEnCarritoLocalStorage, setProductosEnCarritoLocalStorage] = useState(() => {
@@ -80,10 +85,10 @@ const Carrito = () => {
 
   return (
     <div className="carrito-container">
-      <h2>Carrito de Compras</h2>
+      <h2>{i18next.t('h2Carrito')}</h2>
 
       {productosEnCarritoLocalStorage.length === 0 ? (
-        <p>El carrito está vacío</p>
+        <p>{i18next.t('pCarritoVacio')}</p>
       ) : (
         <div>
           <ul className="carrito-lista">
@@ -92,8 +97,8 @@ const Carrito = () => {
                 <img src={producto.urlfoto} alt={producto.nombre} className="carrito-imagen" />
                 <div className="carrito-detalle">
                   <h3>{producto.nombre}</h3>
-                  <p>Precio: ${producto.precio}</p>
-                  <p>Cantidad: {producto.cantidad}</p>
+                  <p>{i18next.t('pPrecio')}: ${producto.precio}</p>
+                  <p>{i18next.t('pCantidad')}: {producto.cantidad}</p>
                 </div>
                 <div className="carrito-botones">
                   <button className="carrito-botones-borrar" onClick={() => quitarProducto(producto.id)}>
@@ -122,9 +127,9 @@ const Carrito = () => {
             ))}
           </ul>
           <div className="carrito-total">
-            <p>Total: ${calcularTotal(productosEnCarrito)}</p>
-            <button onClick={vaciarCarritoAlerta}>Vaciar Carrito</button>
-            <button onClick={handleBuy}>Comprar</button>
+            <p>{i18next.t('pTotal')}: ${calcularTotal(productosEnCarrito)}</p>
+            <button onClick={vaciarCarritoAlerta}>{i18next.t('buttonVaciarCarrito')}</button>
+            <button onClick={handleBuy}>{i18next.t('buttonComprar')}</button>
             {preferenceId && <Wallet initialization={{ preferenceId }} />}
           </div>
         </div>
